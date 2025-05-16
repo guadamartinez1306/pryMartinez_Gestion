@@ -85,9 +85,9 @@ namespace pryMartinez_Gestion
 
                 comandoBD.Connection = conexionBD;
                 comandoBD.CommandType = System.Data.CommandType.Text;
-                comandoBD.CommandText = "SELECT * FROM Usuario WHERE Nombre = @nombre AND Contraseña = @contraseña";
-                comandoBD.Parameters.AddWithValue("@nombre", nombreUser);
-                comandoBD.Parameters.AddWithValue("@contraseña", contraUser);
+                comandoBD.CommandText = "SELECT * FROM Usuario WHERE Nombre = ? AND Contraseña = ?";
+                comandoBD.Parameters.AddWithValue("?", nombreUser);
+                comandoBD.Parameters.AddWithValue("?", contraUser);
 
                 lectorBD = comandoBD.ExecuteReader();
 
